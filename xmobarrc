@@ -1,0 +1,35 @@
+Config { overrideRedirect = False
+       , font     = "xft:FiraCode:size=11"
+       , bgColor  = "#121212"
+       , fgColor  = "#CCCCCC"
+       , position = TopW L 97
+       , commands = [ Run Cpu
+                        [ "-L", "3"
+                        , "-H", "50"
+                        , "--high"  , "red"
+                        , "--normal", "green"
+                        ] 10
+	                , Run Battery 
+                        [ "-t", "<acstatus>: <left>%"
+                        , "--"
+	                    , "-O", "AC"
+	                    , "-o", "BT"
+	                    , "-h", "green"
+	                    , "-l", "red"
+	                    ] 10
+                    , Run Alsa "default" "Master"
+                        [ "--template", "VL: <volumestatus>"
+                        , "--suffix"  , "True"
+                        , "--"
+                        , "--on", ""
+                        ]
+                    , Run Kbd [("ru", "RU"), ("us", "US")]
+                    , Run Wireless "wlan0" [ "-t", "<essid> <quality>%" ] 10
+                    , Run Memory ["--template", "Mem: <usedratio>%"] 10
+                    , Run Date "<fc=#FFC66D>%H:%M</fc>" "date" 10
+                    , Run XMonadLog
+                    ]
+       , sepChar  = "%"
+       , alignSep = "}{"
+       , template = " %XMonadLog% }{ %wlan0wi% | %battery% | %alsa:default:Master% | %cpu% | %memory% | %kbd% | %date% "
+       }
