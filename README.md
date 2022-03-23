@@ -38,6 +38,9 @@ $ git clone --branch v0.16 https://github.com/xmonad/xmonad-contrib
 stack init
 ```
 ```bash
+stack install
+```
+```bash
 ln -s {PATH}/xmonad-desktop {HOME}/.xmonad
 ```
 ```bash
