@@ -17,7 +17,8 @@ Base Fonts:
 Build dependencies:
     - stack  (https://docs.haskellstack.org/en/stable/README/)
 
-base instructions for xmonad: https://xmonad.org/INSTALL.html
+base instructions for xmonad: https://xmonad.org/INSTALL.html 
+#!Don't forget install dependencies for your linux distribution 
 
 ### Xmonad setup
 Get latest xmonad and xmonad-contrib
