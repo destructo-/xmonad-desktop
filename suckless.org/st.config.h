@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode-Regular:pixelsize=13:antialias=true:autohint=true";
+static char *font = "FiraCode-Regular:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -74,7 +74,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "screen-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
