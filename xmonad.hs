@@ -7,6 +7,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.SetWMName
 
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
@@ -23,7 +24,7 @@ import XMonad.Hooks.EwmhDesktops
 defineWorkspaces = [ " sys ", " web ", " dev ", " ctl ", " ssh ", " 6 " , " 7 ", " msg ", " gms " ]
 
 defineManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)
-defineManageHook = composeAll 
+defineManageHook = composeAll
     [ title =? "Mozilla Firefox" --> doShift ( defineWorkspaces !! 1 )
     , title =? "Code - OSS"      --> doShift ( defineWorkspaces !! 2 )
     , title =? "Chromium"        --> doShift ( defineWorkspaces !! 2 )
@@ -31,11 +32,12 @@ defineManageHook = composeAll
     ]
 
 additionalHotKeys :: [(String, X ())]
-additionalHotKeys = 
+additionalHotKeys =
     [ ("M-S-<Return>", spawn "st -e tmux")
     , ("M-r",   spawn "slock")
     , ("M-p",   spawn "dmenu_run")
     , ("M-S-r", spawn "xmonad --restart")
+    , ("M-s",   spawn "deepin-screenshot")
     , ("M-S-q", io exitSuccess)
 
     , ("M-<F1>", spawn "amixer set Master toggle")
@@ -67,6 +69,7 @@ defineStartupHook = do
     spawnOnce "xsetroot -cursor_name left_ptr"
     spawnOnce "feh --randomize --bg-fill ~/wallpapers/*"
     spawnOnce "amixer set Capture toggle nocap"
+    setWMName "LG3D"
 
 showWnameConfiguration :: SWNConfig
 showWnameConfiguration = def
@@ -77,7 +80,7 @@ showWnameConfiguration = def
     }
 
 tabsConfiguration :: Theme
-tabsConfiguration = def 
+tabsConfiguration = def
     { activeColor         = "#262626"
     , inactiveColor       = "#121212"
     , activeBorderColor   = "#262626"

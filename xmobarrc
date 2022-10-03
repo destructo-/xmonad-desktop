@@ -9,7 +9,7 @@ Config { overrideRedirect = False
                         , "--high"  , "red"
                         , "--normal", "green"
                         ] 10
-	                , Run Battery 
+	                , Run Battery
                         [ "-t", "<acstatus>: <left>%"
                         , "--"
 	                    , "-O", "AC"
@@ -26,10 +26,12 @@ Config { overrideRedirect = False
                     , Run Kbd [("ru", "RU"), ("us", "US")]
                     , Run Wireless "wlan0" [ "-t", "<essid> <quality>%" ] 10
                     , Run Memory ["--template", "Mem: <usedratio>%"] 10
-                    , Run Date "<fc=#FFC66D>%H:%M</fc>" "date" 10
+                    , Run DateZone "MS: <fc=#FFC66D>%H:%M</fc>" "en_US.UTF-8" "Europe/Moscow" "msTime" 10
+                    , Run DateZone "TB: <fc=#FFC66D>%H:%M</fc>" "en_US.UTF-8" "Asia/Tbilisi" "tbTime" 10
+                    , Run Date "%a %b %_d %Y <fc=#ee9a00>%H:%M:%S</fc>" "date" 10
                     , Run XMonadLog
                     ]
        , sepChar  = "%"
        , alignSep = "}{"
-       , template = " %XMonadLog% }{ %wlan0wi% | %battery% | %alsa:default:Master% | %cpu% | %memory% | %kbd% | %date% "
+       , template = " %XMonadLog% }{ %wlan0wi% | %battery% | %alsa:default:Master% | %cpu% | %memory% | %kbd% | %msTime% %tbTime% "
        }

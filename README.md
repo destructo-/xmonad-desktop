@@ -4,9 +4,10 @@ Used apps:
 - tmux   (https://github.com/tmux/tmux/wiki)
 - st     (https://st.suckless.org/)
 - slock  (https://tools.suckless.org/slock/)
-- dmenu  (https://tools.suckless.org/dmenu/) 
+- dmenu  (https://tools.suckless.org/dmenu/)
 - xmobar (https://xmobar.org/)
 - trayer
+- deepin-screenshot
 
 Optional apps:
  - dunst  (https://github.com/dunst-project/dunst)
@@ -17,8 +18,8 @@ Base Fonts:
 Build dependencies:
     - stack  (https://docs.haskellstack.org/en/stable/README/)
 
-base instructions for xmonad: https://xmonad.org/INSTALL.html 
-#!Don't forget install dependencies for your linux distribution 
+base instructions for xmonad: https://xmonad.org/INSTALL.html
+#!Don't forget install dependencies for your linux distribution
 
 ### Xmonad setup
 Get latest xmonad and xmonad-contrib
@@ -65,7 +66,7 @@ git clone https://git.suckless.org/dmenu
 ```bash
 cd dmenu
 ```
-```bash 
+```bash
 rm dmenu_run
 ```
 ```bash
