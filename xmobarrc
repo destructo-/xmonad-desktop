@@ -1,22 +1,22 @@
 Config { overrideRedirect = False
-       , font     = "xft:FiraCode:size=11"
+       , font     = "Fira Code Normal 11"
        , bgColor  = "#121212"
        , fgColor  = "#CCCCCC"
-       , position = TopW L 97
+       , position = TopHM 23 0 75 0 0
        , commands = [ Run Cpu
                         [ "-L", "3"
                         , "-H", "50"
                         , "--high"  , "red"
                         , "--normal", "green"
                         ] 10
-	                , Run Battery
+                  , Run Battery
                         [ "-t", "<acstatus>: <left>%"
                         , "--"
-	                    , "-O", "AC"
-	                    , "-o", "BT"
-	                    , "-h", "green"
-	                    , "-l", "red"
-	                    ] 10
+                      , "-O", "AC"
+                      , "-o", "BT"
+                      , "-h", "green"
+                      , "-l", "red"
+                      ] 10
                     , Run Alsa "default" "Master"
                         [ "--template", "VL: <volumestatus>"
                         , "--suffix"  , "True"
